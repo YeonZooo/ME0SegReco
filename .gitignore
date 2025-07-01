@@ -239,9 +239,6 @@ pyrightconfig.json
 # png
 **/png
 
-# datasets
-*.h5
-
 # logs
 **/logs
 **/condor_logs
