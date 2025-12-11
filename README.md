@@ -28,7 +28,7 @@ ME0SegReco is a deep learning framework for ME0 (Muon Endcap 0) segment reconstr
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/slowmoyang/ME0SegReco.git
+git clone https://github.com/YeonZooo/ME0SegReco.git
 cd ME0SegReco
 ```
 
@@ -37,6 +37,8 @@ cd ME0SegReco
 micromamba env create -f environment.yaml
 micromamba activate me0segreco-py311
 ```
+
+> **Note**: The `environment.yaml` file is configured for the University of Seoul GPU cluster. Users must modify dependency versions (e.g., PyTorch, CUDA) to ensure compatibility with their local environments.
 
 3. Set up the Python path:
 ```bash
@@ -154,6 +156,13 @@ The framework provides comprehensive evaluation metrics:
 - **Hit-level metrics**: Precision, recall, F1-score for individual hits
 - **Segment-level metrics**: Segment reconstruction quality
 - **Segment graph metrics**: Graph-based evaluation of reconstructed segments
+
+## Dataset Generation
+
+To generate datasets for training and evaluation, use the dataset generation code available at:
+https://gitlab.cern.ch/yeonju/me0segreco
+
+The repository includes comprehensive documentation for dataset generation. Please refer to its README for detailed instructions.
 
 ## Data Format
 
