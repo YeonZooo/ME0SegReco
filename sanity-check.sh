@@ -1,6 +1,6 @@
 #!/bin/zsh
 if [ -z $1 ]; then
-	echo "YOU MISSED ARGUMENTS"
+	echo "YOU MISSED MODEL (use transformer or cnn)"
 	return
 else
 	CONFIG="config/$1.yaml"
@@ -14,7 +14,7 @@ if [ -f ${CONFIG} ]; then
 	        --data.train_dataset_init_args.nfiles 1 \
 	        --data.eval_dataset_init_args.nfiles 1"
 else
-	echo "CAN NOT FIND CONFIG FILE"
+	echo "CAN NOT FIND CONFIG FILE (use transformer or cnn)"
 	return
 fi
 

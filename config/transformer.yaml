@@ -55,7 +55,7 @@ data:
       layer_first: false
       features:
         cls:
-          min: 0
+          min: 1
           max: 384
         bx:
           min: -3
@@ -79,16 +79,16 @@ trainer:
   log_every_n_steps: 10
   profiler: simple
   callbacks:
-    #    - class_path: lightning.pytorch.callbacks.EarlyStopping
-    #      init_args:
-    #        monitor: val_loss
-    #        mode: min
-    #        patience: 40
+    - class_path: lightning.pytorch.callbacks.EarlyStopping
+      init_args:
+        monitor: val_loss
+        mode: min
+        patience: 40
     - class_path: lightning.pytorch.callbacks.ModelCheckpoint
       init_args:
         monitor: val_loss
         mode: min
-        filename: "{epoch}-{step}"
+        filename: "best-{epoch}-{step}"
     - class_path: lightning.pytorch.callbacks.ModelCheckpoint
       init_args:
         monitor: epoch

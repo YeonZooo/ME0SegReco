@@ -1,4 +1,4 @@
-name: me0segreco-py311
+name: ME0SegReco-py311
 channels:
   - conda-forge
 dependencies:
@@ -17,6 +17,8 @@ dependencies:
   - statsmodels=0.14.5
   - typeshed-client=2.4.0
   - einops=0.8.1
+  - pdfcombine=1.1.5
+  - ipykernel=7.1.0
   - pip
   - pip:
     - tensordict==0.7.2

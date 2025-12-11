@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 from statsmodels.nonparametric.smoothers_lowess import lowess
 import pdfcombine
 
-
 def select(df: pd.DataFrame, prefix: str) -> pd.DataFrame:
     new_columns = [each for each in df.columns if each.startswith(prefix)]
     new_columns = ['epoch', 'step'] + new_columns
@@ -62,8 +61,8 @@ def plot_learning_curve(df_train: pd.DataFrame,
 
 
 def make_learning_curves(log_dir: Path):
-    ckpt_path = next(log_dir.glob('checkpoints/**/*epoch*.ckpt'))
-    best_info = dict(each.split('=') for each in ckpt_path.stem.split('-'))
+    ckpt_path = next(log_dir.glob('checkpoints/**/best*.ckpt'))
+    best_info = dict(each.split('=') for each in ckpt_path.stem.split('-') if '=' in each)
     best_info = {key: int(value) for key, value in best_info.items()}
 
     metrics_path = log_dir / 'metrics.csv'
