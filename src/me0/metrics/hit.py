@@ -48,7 +48,7 @@ class HitFakeRate(BinaryStatScores):
 
     def compute(self) -> Tensor:
         """
-        fake rate = FP / PP = 1 - TP / PP = 1 - preicison
+        fake rate = FP / PP = 1 - TP / PP = 1 - precision
         """
         tp, fp, tn, fn = self._final_state()
         precision = _precision_recall_reduce(

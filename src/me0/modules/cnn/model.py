@@ -43,11 +43,11 @@ class ConvBn(nn.Module):
 
 
 def ConvBn2d(**kwargs) -> nn.Module:
-    return ConvBn(dim='2d', **kwags)
+    return ConvBn(dim='2d', **kwargs)
 
 
 def ConvBn3d(**kwargs) -> nn.Module:
-    return ConvBn(dim='3d', **kwags)
+    return ConvBn(dim='3d', **kwargs)
 
 
 class ResidualBlock(nn.Module):
